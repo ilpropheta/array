@@ -1,0 +1,243 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Fredoka One', sans-serif; /* Apply Fredoka One font */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffdd57;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Difficulty Selection */
+#difficulty-selection {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.4em; /* Slightly larger and bold */
+    color: #ffdd57;
+}
+
+select {
+    padding: 10px;
+    font-size: 1.2em;
+    font-family: 'Fredoka One', sans-serif;
+    border-radius: 8px;
+    border: 2px solid #ffdd57;
+    background: #fff;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+select:hover, select:focus {
+    border-color: #ffb457;
+    outline: none;
+}
+
+/* Start Game Button */
+button {
+    padding: 10px 20px;
+    font-size: 1.2em; /* Slightly larger */
+    background-color: #ffdd57;
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px 0;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+button:hover {
+    background-color: #ffb457;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#betting {
+    margin-top: 20px;
+}
+
+/* Betting Buttons */
+#bet-win, #bet-lose {
+    font-size: 1.3em;
+    margin: 5px;
+}
+
+/* Lens Icon Button */
+.lens-icon {
+    display: block;
+    margin: 20px auto;
+    font-size: 2.5em; /* Make the icon bigger */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffdd57;
+    transition: transform 0.3s ease;
+}
+
+.lens-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Instruction Panel */
+#instructions-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+#instructions-panel.hidden {
+    display: none;
+}
+
+#instructions-panel h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#instructions-panel ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+#instructions-panel button {
+    margin-top: 15px;
+    background-color: #ffdd57;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+/* Status and Timer */
+#status, #timer {
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+/* Game Board */
+#game-board {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-height: 200px;
+}
+
+/* Stylish Array Numbers */
+.number {
+    display: inline-block;
+    font-size: 1.8em;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin: 15px;
+    text-align: center;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.number:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: #ffb457;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Active/Selected number effect */
+.number.active {
+    background-color: #9013fe;
+    color: #fff;
+    border-color: #ff4081;
+    transform: scale(1.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    button {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    .number {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 1.2em;
+    }
+}
+
+/* Win/Lose background for the container */
+.container.win {
+    background-color: rgba(50, 205, 50, 0.8);
+    transition: background-color 0.5s ease;
+}
+
+.container.lose {
+    background-color: rgba(255, 69, 58, 0.8);
+    transition: background-color 0.5s ease;
+}
+
+/* Highlight the selected bet button */
+button.active-bet {
+    background-color: #ffb457;
+    border: 2px solid #ffdd57;
+    color: #333;
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}

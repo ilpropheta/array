@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Array Game</title>
+    <link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>The Array Game</h1>
+        <div id="score">Score: 0</div>
+        <div id="difficulty-selection">
+            <label for="difficulty">Choose Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="hero">Hero</option>
+            </select>
+            <button id="start-game">Start Game</button>
+        </div>
+        <div id="game-board"></div>
+        <div id="betting">                      
+            <button id="bet-win" disabled="true">Winning</button>
+            <button id="bet-lose" disabled="true">Losing</button>
+        </div>
+        <div id="status"></div>
+        <div id="timer"></div>
+		<button id="info-button" class="lens-icon">ℹ️</button>
+		<div id="instructions-panel" class="hidden" style="width: 85%; max-width: 500px;">
+    <center><h2>How to Play</h2></center>
+    <ul>		
+		<li>This game is about mental speed and pattern recognition.</li>
+        <li>An array of numbers will appear on the board.</li>
+		<li>You and the AI take turns mentally removing the highest number and all numbers to its right, until the array is empty.</li>
+		<li>If you empty the array on your turn, the array is considered "winning".</li>
+		<li>Your goal is to predict whether the array is "winning" or "losing".</li>
+		<li>For example, in the array <strong>5, 4, 10, 9, 8, 12, 6</strong>: You remove 12 and 6. The AI removes 10, 9, and 8. You then remove 5 and 4, winning the game.</li>
+		<li>In another array <strong>8, 6, 9, 1</strong>: You remove 9 and 1. The AI removes 8 and 6, so the AI finishes the array, meaning the array is "losing".</li>
+		<li>Place your bet before time runs out!</li>
+		<li>Choose your difficulty (Easy, Medium, Hard, Hero) for more excitement and bigger rewards.</li>
+    </ul>
+    <div style="text-align:center; font-family: 'Fredoka One', cursive; font-size: 2em; margin-top: 20px;">
+        <strong>Good Luck!</strong>
+    </div>
+    <!-- Close Button -->
+    <center><button id="close-instructions">
+        Close
+    </button></center>
+</div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
